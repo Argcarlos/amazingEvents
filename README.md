@@ -1,2 +1,2 @@
 # amazingEvents
-Tarea 2 con Jacascript
+Tarea 2 con Javascript
