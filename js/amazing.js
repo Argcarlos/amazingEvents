@@ -171,3 +171,27 @@ const data = {
       }
     ]
   }
+
+  let card= document.getElementById("card")
+
+  function printCards(array, container){
+    for(let data of array){
+        let div = document.createElement("div");
+        div.className = "card"
+        div.innerHTML += `
+        <div class="card">
+            <p>${data.events.image}</p>
+            <p>${data.events.name}</p>
+            <p>${data.events.date}</p>
+            <p>${data.events.description}</p>
+            <p>${data.events.category}</p>
+            <p>${data.events.capacity}</p>
+            <p>${data.events.estimate}</p>
+            <p>${data.events.price}</p>
+        </div>
+        <img src="${data.events.image}"/>
+                ` 
+        container.appendChild(div)
+    }
+}
+printCards(data, container)
