@@ -1,3 +1,6 @@
+let cardTemplate= document.getElementById("cardTemplate");
+const fragment = document.createDocumentFragment();
+
 const data = {
     "currentDate": "2022-01-01",
     "events": [
@@ -173,14 +176,14 @@ const data = {
   }
 
 
-const myArray = Object.values(data);
 
-let cardTemplate= document.getElementById("cardTemplate")
+
+  const myArray = Object.values(data);
 
   function createCards(Array, cardTemplate){
-    for(let data of Object.keys(myArray)){
+    for(let data of Array){
         let div = document.createElement("div");
-        div.className = "card";
+        div.className = "card"
         div.innerHTML += `
        
         <img src="${data.image}" class="card-img-top" id="" alt="">
@@ -195,8 +198,9 @@ let cardTemplate= document.getElementById("cardTemplate")
         </div>
       </div>
        `
-      cardTemplate.appendChild(div)
+      fragment.appendChild(div);
     }
+    cardTemplate.appendChild(fragment);
 }
-createCards(data, cardTemplate)
+createCards(data.events, cardTemplate)
 
