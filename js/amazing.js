@@ -6,7 +6,7 @@ const data = {
         "image":"https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg",
         "name":"Collectivities Party",
         "date":"2021-12-12",
-        "description":"Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
+        "description":"Enjoy your favorite dishes, from different countries, in a unique event for the whole family.",
         "category":"Food Fair",
         "place":"Room A",
         "capacity":45000,
@@ -54,7 +54,7 @@ const data = {
         "image":"https://i.postimg.cc/KYD0jMf2/comicon.jpg",
         "name":"Comicon",
         "date":"2021-02-12",
-        "description":"For comic lovers, all your favourite characters gathered in one place.",
+        "description":"For comic lovers, all your favorite characters gathered in one place.",
         "category":"Costume Party",
         "place":"Room C",
         "capacity":120000,
@@ -162,7 +162,7 @@ const data = {
         "image":"https://i.postimg.cc/T3C92KTN/scale.jpg",
         "name":"Avengers",
         "date":"2022-10-15",
-        "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
+        "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favorite superheroes.",
         "category":"Cinema",
         "place":"Room D1",
         "capacity":9000,
@@ -172,26 +172,31 @@ const data = {
     ]
   }
 
-  let card= document.getElementById("card")
 
-  function printCards(array, container){
-    for(let data of array){
+const myArray = Object.values(data);
+
+let cardTemplate= document.getElementById("cardTemplate")
+
+  function createCards(Array, cardTemplate){
+    for(let data of Object.keys(myArray)){
         let div = document.createElement("div");
-        div.className = "card"
+        div.className = "card";
         div.innerHTML += `
-        <div class="card">
-            <p>${data.events.image}</p>
-            <p>${data.events.name}</p>
-            <p>${data.events.date}</p>
-            <p>${data.events.description}</p>
-            <p>${data.events.category}</p>
-            <p>${data.events.capacity}</p>
-            <p>${data.events.estimate}</p>
-            <p>${data.events.price}</p>
+       
+        <img src="${data.image}" class="card-img-top" id="" alt="">
+        <div class="card-body">
+          <h5 class="card-title">${data.name}</h5>
+          <p class="card-text">${data.description}</p>
+          <p>${data.capacity}</p>
+          <p>${data.estimate}</p>
+          <p>${data.price}</p>
+
+          <a href="./pages/details.html" class="btn btn-primary">View details</a>
         </div>
-        <img src="${data.events.image}"/>
-                ` 
-        container.appendChild(div)
+      </div>
+       `
+      cardTemplate.appendChild(div)
     }
 }
-printCards(data, container)
+createCards(data, cardTemplate)
+
