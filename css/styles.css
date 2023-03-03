@@ -47,7 +47,6 @@ header {
 
 /* BUTTON */
 .navbar-toggler {
-
   cursor: pointer;
   display: flex;
   color: #fff;
@@ -129,12 +128,39 @@ section {
   align-items: center;
   padding: 10px;
   margin-top: 25px;
-  justify-content: center;
+  justify-content:center;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-  .container-search {
+input[placeholder="search"]{
+  width: 20%;
+  padding: .6rem;
+  border-radius: .5rem;
+  border: none;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  margin: 1rem;
+}
+
+#container{
+  border: 1px solid;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+
+.container-search {
     display: flex;
     height: auto;
     align-items: center;
@@ -142,13 +168,14 @@ section {
     gap: 0.5rem;
     padding: 0 0.5rem;
     
-  }
+}
 
-  .container-check {
+.container-check {
     display: flex;
-  }
+}
 
   /* common card */
+
 .card{
   width: 18rem;
   height: auto;
@@ -157,9 +184,7 @@ section {
   display: flex;
   padding: .5rem;
   margin-top: 20px;
-  
-  
-  
+   
 }
 .card>img {
   width: 100%;
@@ -174,6 +199,19 @@ section {
   text-align: center;
 }
 
+#checkboxes{
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+.cuadrado{
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid;
+}
+.circulo{
+  border-radius: 100%;
+}
 
 /* Table */
 
