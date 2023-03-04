@@ -1,11 +1,14 @@
-
+import data from "./data"
+console.log([document])
 
 let cardTemplate= document.getElementById("cardTemplate");
+let divContainer = document.querySelector("#container");
 const fragment = document.createDocumentFragment();
 const myCheckbox = document.getElementById("myCheckbox");
 const $container = document.getElementById('container');
 const $radios = document.getElementById('radios');
 const $search = document.querySelector('input[placeholder="search"]');
+
 
 const data = {
   "currentDate": "2022-01-01",
@@ -182,8 +185,6 @@ const data = {
 }
 
 
-
-
 /*
   myCheckbox.addEventListener("change", function(event) {
     if (event.target.checked) {
@@ -195,7 +196,7 @@ const data = {
 
   const myArray = Object.values(data);
 
-  /*function createCards(Array, cardTemplate){
+  function createCards(Array, cardTemplate){
     for(let data of Array){
         let div = document.createElement("div");
         div.className = "card"
@@ -216,12 +217,15 @@ const data = {
     }
     cardTemplate.appendChild(fragment);
 }
-createCards(data.events, cardTemplate)*/
+createCards(data.events, cardTemplate)
 
+
+/*---------------------------
 const createCards = (array, container) => {
   container.innerHTML = " "
   array.forEach(data => {
       let div = document.createElement('div');
+      var button = document.getElementById("myButton");
       div.className = 'card'
       div.innerHTML = `
       <img src="${data.image}" class="card-img-top" id="" alt="">
@@ -232,6 +236,8 @@ const createCards = (array, container) => {
           <p>U$s ${data.price}</p>
 
           <a href="./pages/details.html" class="btn btn-primary">View details</a>
+          
+          
         </div>
       </div>
       `
@@ -240,9 +246,9 @@ const createCards = (array, container) => {
   container.appendChild(fragment)
 }
 
-createCards(data.events, $container)
+createCards(data.events, $container)------*/
 
-
+/*
 const createCategories = (array) =>{
   let categories = array.map(category=> category.type)
 
@@ -325,4 +331,11 @@ function separateCardsByDate(Array, cardTemplate) {
 let separatedCards = separateCardsByDate(cardTemplate, new Date());
 
 console.log(separatedCards);*/
+
+
+  // Add a click event listener to the button
+  button.addEventListener("click", function() {
+    // Navigate to another page
+    window.location.href = "../pages/details.html"
+  })
 
